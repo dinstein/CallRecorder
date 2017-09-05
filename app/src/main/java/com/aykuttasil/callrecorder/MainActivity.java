@@ -1,11 +1,17 @@
 package com.aykuttasil.callrecorder;
 
+import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
 import com.aykuttasil.callrecord.CallRecord;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,18 +26,17 @@ public class MainActivity extends AppCompatActivity {
 
         //callRecord = CallRecord.init(this);
 
-        callRecord = new CallRecord.Builder(this)
-                .setRecordFileName("CallRecorderFile")
-                .setRecordDirName("CallRecorderDir")
-                .setShowSeed(true)
-                .build();
+//        callRecord = new CallRecord.Builder(this)
+//                .setRecordFileName("CallRecorderFile")
+//                .setRecordDirName("CallRecorderDir")
+//                .setShowSeed(true)
+//                .build();
 
         //callRecord.changeReceiver(new MyCallRecordReceiver(callRecord));
 
         //callRecord.enableSaveFile();
 
 
-        /*
         callRecord = new CallRecord.Builder(this)
                 .setRecordFileName("Record_" + new SimpleDateFormat("ddMMyyyyHHmmss", Locale.US).format(new Date()))
                 .setRecordDirName("CallRecord")
@@ -40,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 .setOutputFormat(MediaRecorder.OutputFormat.AMR_NB)
                 .setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
                 .setShowSeed(true)
-                .buildService();
+                .build();
 
         callRecord.startCallRecordService();
-        */
 
     }
 
