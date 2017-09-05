@@ -140,6 +140,8 @@ public class CallRecordReceiver extends PhoneCallReceiver {
 
             audiofile = File.createTempFile(file_name, suffix, sampleDir);
 
+            Log.i(TAG, "record audiofile: " + audiofile.getAbsolutePath());
+
             recorder = new MediaRecorder();
             recorder.setAudioSource(audio_source);
             recorder.setOutputFormat(output_format);
